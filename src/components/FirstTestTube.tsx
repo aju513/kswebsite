@@ -1,6 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
 
-const YourSvgComponent = () => {
+
+const FirstTestTube = () => {
+
+  const [val, setVal] = useState(4);
+   let scrollValue;
+  useEffect(() => {
+    const handleScroll = () => {
+       scrollValue = window.scrollY;
+
+       if(scrollValue <= 50){
+       setVal(1)
+      }
+      else if(scrollValue > 50 && scrollValue <=167){
+        setVal(2);
+      }
+      else if(scrollValue > 167 && scrollValue <= 333){
+        setVal(3);
+      }
+
+      else{
+        setVal(4)
+      }
+
+      console.log(scrollValue);
+    };
+    window.addEventListener("scroll", handleScroll);
+  
+  },);
+
+
+
+
+
   const svgState = [
     "M0 0",
     " M-411.968994140625,-164.25 C-411.968994140625,-164.25 -411.968994140625,-163.14599609375 -411.968994140625,-161.177001953125",
@@ -8,6 +41,7 @@ const YourSvgComponent = () => {
     " M-411.968994140625,-164.25 C-411.968994140625,-164.25 -411.968994140625,-69.375 -411.968994140625,-69.375 C-411.968994140625,-69.375 -413.218994140625,-63.875 -404.343994140625,-62.5 C-395.468994140625,-61.125 375.875,53.5 375.875,53.5 C375.875,53.5 381.375,55.5 385,50.875 C388.625,46.25 497.5,-106.125 497.5,-106.125 C497.5,-106.125 499,-110.125 498.125,-112.625 C497.25,-115.125 494,-117.75 487.5,-116.375 C483.3500061035156,-115.49700164794922 83.42400360107422,-29.03499984741211 -205.26600646972656,33.38100051879883",
     " M-411.968994140625,-164.25 C-411.968994140625,-164.25 -411.968994140625,-69.375 -411.968994140625,-69.375 C-411.968994140625,-69.375 -413.218994140625,-63.875 -404.343994140625,-62.5 C-395.468994140625,-61.125 375.875,53.5 375.875,53.5 C375.875,53.5 381.375,55.5 385,50.875 C388.625,46.25 497.5,-106.125 497.5,-106.125 C497.5,-106.125 499,-110.125 498.125,-112.625 C497.25,-115.125 494,-117.75 487.5,-116.375 C481,-115 -496.625,96.375 -496.625,96.375 C-496.625,96.375 -502,98.375 -502,103.125 C-502,107.875 -502,164.875 -502,164.875",
   ];
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -16,7 +50,7 @@ const YourSvgComponent = () => {
       width="1007"
       height="347"
       preserveAspectRatio="xMidYMid meet"
-      style={{ width: "100%", height: "100%" }}
+      className="w-4/5 absolute bottom-0"
     >
       <defs>
         <clipPath id="__lottie_element_19">
@@ -72,7 +106,7 @@ const YourSvgComponent = () => {
               stroke="rgb(43,37,51)"
               strokeOpacity="1"
               strokeWidth="1"
-              d={svgState[0]}
+              d={svgState[val]}
             ></path>
           </g>
         </g>
@@ -81,4 +115,4 @@ const YourSvgComponent = () => {
   );
 };
 
-export default YourSvgComponent;
+export default FirstTestTube;
