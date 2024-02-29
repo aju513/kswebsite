@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import YourSvgComponent from "../components/SvgComponent";
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
         <div className="bg-green-600 h-[45rem] w-[34rem] lg:h-[40rem] lg:w-[50rem] rounded-[10rem] absolute -bottom-[20%] left-[70%] animation rotation-45-deg"></div>
         <div className="bg-gradient-to-br from-red-500 to-white h-[15rem] w-[40rem] rounded-[10rem] absolute top-[34%] left-[76%] opacity-90 animation rotation-neg-45-deg"></div>
       </div>
+      <YourSvgComponent />
     </>
   );
 };
