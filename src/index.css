@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes animation {
+  0% {
+    transform: scale(0.9);
+    transform: translate(0.5);
+  }
+  50% {
+    transform: scale(1);
+    transform: translate(1);
+  }
+  100% {
+    transform: scale(0.9);
+    transform: translate(0.5);
+  }
+}
+
+.animation {
+  animation: animation 4s ease forwards infinite; /* Adjust the animation duration and timing function as needed */
+}
+.rotation-45-deg {
+  rotate: 45deg;
+}
+.rotation-neg-45-deg {
+  rotate: 135deg;
+}
